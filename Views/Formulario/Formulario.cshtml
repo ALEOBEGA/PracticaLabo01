@@ -1,0 +1,59 @@
+@model PracticaLabo01.Models.Formulario
+
+@{
+    ViewData["Title"] = "Formulario Page";
+}
+
+<div class="container">
+
+    <h1>Hecho por Alex Berrocal</h1>
+    <form asp-controller="Formulario" asp-action="Formulario">
+        <div class="form-group">
+            <label for="nc">Nombre:</label>
+            <input type="text" asp-for="Nombre" id="nc"  class="form-control">
+            <span asp-validation-for="Nombre" class="from-control"></span>
+        </div>
+        <div class="form-group">
+            <label for="nc">Apellido:</label>
+            <input type="text" asp-for="Apellido" id="nc" class="form-control">
+            <span asp-validation-for="Apellido" class="from-control"></span>
+        </div>
+         <div class="form-group">
+            <label for="nc">Distrito:</label>
+            <input type="text" asp-for="Distrito" id="nc" class="form-control">
+            <span asp-validation-for="Distrito" class="from-control"></span>
+        </div> 
+        <div>
+        <label>Bancos</label>
+            <div>
+            <select asp-for="Bancos">
+                <option value="BCP">BCP</option>
+                <option value="Scotiabank">Scotiabank</option>
+                <option value="BanBif">BanBif</option>
+                <option value="Interbank">Interbank</option>
+            </select>
+            <span asp-validation-for="Bancos" class="from-control"></span>
+            </div>
+        </div>
+        <div>
+        <div class="form-group">
+            <label for="nc">Edad:</label>
+            <input type="text" asp-for="Edad" id="nc" class="form-control">
+            <span asp-validation-for="Edad" class="from-control"></span>
+        </div> 
+        </div>
+        <div class="form-group">
+            Genero:
+            <label><input type="radio" name="sexo" value="F"> Femenino</label>
+            <label><input type="radio" name="sexo" value="M"> Masculino</label>
+        </div>
+         <div class="form-group">
+            <label for="nc">Autor:</label>
+            <input type="text" asp-for="Autor" id="nc" class="form-control">
+            <span asp-validation-for="Autor" class="from-control"></span>
+        </div> 
+        <button href="Login.html" class="btn btn-primary">Registrar</button>
+    </form>
+    <td>@Html.DisplayTextFor(model => model.Respuesta)</td>
+    
+    </div>
