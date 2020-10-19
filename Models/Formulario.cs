@@ -35,7 +35,7 @@ namespace PracticaLabo01.Models
         [Column("edad")] 
         public string Edad { get; set; }
 
-        [Required(ErrorMessage="Por favor seleccione el Dato")]  
+        [Required(ErrorMessage="Por favor seleccione su genero")]  
         [Display(Name="Genero")]
         [Column("genero")] 
         public string Genero { get; set; }
