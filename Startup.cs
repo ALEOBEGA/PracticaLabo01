@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 
 using Microsoft.EntityFrameworkCore;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
+
 using PracticaLabo01.Data;
 
 namespace PracticaLabo01
@@ -32,7 +33,6 @@ namespace PracticaLabo01
                        Configuration.GetConnectionString("postgress-db")));
             services.AddControllersWithViews();   
         }
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
