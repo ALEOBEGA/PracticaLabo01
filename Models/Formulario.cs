@@ -45,7 +45,8 @@ namespace PracticaLabo01.Models
         [Column("autor")] 
         public string Autor { get; set; }
 
-        [Display(Name="Output")] 
+      
+        [NotMapped]
          public string Respuesta { get; set; }
 
     }
