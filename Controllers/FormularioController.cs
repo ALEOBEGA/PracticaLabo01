@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PracticaLabo01.Models;
+using PracticaLabo01.Data;
 
 namespace PracticaLabo01.Controllers
 {
@@ -13,9 +14,13 @@ namespace PracticaLabo01.Controllers
     {
         private readonly ILogger<FormularioController> _logger;
 
-        public FormularioController(ILogger<FormularioController> logger)
+        private readonly DatabaseContext _context;
+
+        public FormularioController(ILogger<FormularioController> logger,
+            DatabaseContext context)
         {
             _logger = logger;
+            _context = context;
         }
         public IActionResult Formulario()
         {
@@ -27,6 +32,9 @@ namespace PracticaLabo01.Controllers
          if(ModelState.IsValid)
          {
              //grabar
+             _context.Add(objFormulario);
+             _context.SaveChanges();
+             
              objFormulario.Respuesta="Se registraron sus datos en la Base de Datos.";
          }
          return View("Formulario",objFormulario);

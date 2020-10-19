@@ -9,6 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using Microsoft.EntityFrameworkCore;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
+using PracticaLabo01.Data;
+
 namespace PracticaLabo01
 {
     public class Startup
@@ -23,7 +27,9 @@ namespace PracticaLabo01
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+             services.AddDbContext<DatabaseContext>(options =>
+                   options.UseNpgsql(Configuration.GetConnectionString("postgress-db")));
+                      services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
