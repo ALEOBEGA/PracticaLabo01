@@ -28,8 +28,9 @@ namespace PracticaLabo01
         public void ConfigureServices(IServiceCollection services)
         {
              services.AddDbContext<DatabaseContext>(options =>
-                   options.UseNpgsql(Configuration.GetConnectionString("postgress-db")));
-                      services.AddControllersWithViews();
+                   options.UseNpgsql(
+                       Configuration.GetConnectionString("postgress-db")));
+                      services.AddControllersWithViews();   
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
