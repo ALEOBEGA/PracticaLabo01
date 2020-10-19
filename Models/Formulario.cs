@@ -1,8 +1,9 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 namespace PracticaLabo01.Models
 {
+    [Table("t_formulario")]
     public class Formulario 
     {
         [Required(ErrorMessage="Por favor ingrese Datos")]  
