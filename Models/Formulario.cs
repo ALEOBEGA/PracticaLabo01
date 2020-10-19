@@ -6,7 +6,11 @@ namespace PracticaLabo01.Models
     [Table("t_formulario")]
     public class Formulario 
     {
-        [Required(ErrorMessage="Por favor ingrese Datos")]  
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
+        [Column("id")]  
+        public int ID { get; set; }
+
+        [Required(ErrorMessage="Por favor ingrese Datos")] 
         [Display(Name="Nombre")]  
         public string Nombre { get; set; }
         
