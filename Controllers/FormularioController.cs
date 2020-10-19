@@ -31,7 +31,7 @@ namespace PracticaLabo01.Controllers
         public IActionResult Formulario( Formulario objFormulario){
          if(ModelState.IsValid)
          {
-             //grabar
+             //grabar datos 
              _context.Add(objFormulario);
              _context.SaveChanges();
              
