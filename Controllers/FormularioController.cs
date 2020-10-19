@@ -24,7 +24,9 @@ namespace PracticaLabo01.Controllers
 
          [HttpPost]
         public IActionResult Formulario( Formulario objFormulario){
-         if(ModelState.IsValid){
+         if(ModelState.IsValid)
+         {
+             //grabar
              objFormulario.Respuesta="Se registraron sus datos en la Base de Datos.";
          }
          return View("Formulario",objFormulario);
